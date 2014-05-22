@@ -58,7 +58,9 @@
             
             get: function (index){
                   return (typeof index !== 'undefined') ? this.el[index] : this.el;
-            }
+            },
+            
+            extend: extend
 
         };
 		
@@ -73,6 +75,21 @@
 				return ret;
 			}            
         }
+		
+		function extend (out) {
+			out = out || {};
+
+			for (var i = 1; i < arguments.length; i++) {
+				if (!arguments[i])
+				    continue;
+
+				for (var key in arguments[i]) {
+				    if (arguments[i].hasOwnProperty(key))
+				          out[key] = arguments[i][key];
+				}
+			 }        
+			 return out;
+		 }
 
         return (window.daShiz = window.da$ = daShiz); // exposing the Library 
 
