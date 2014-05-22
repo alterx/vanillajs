@@ -17,7 +17,7 @@
 				nodes = toArray(document.querySelectorAll(selector));
 			} else if (typeof selector === 'object' && selector.name !== 'daShiz'){
 				nodes = toArray(selector);
-			} else if (selector.name === 'daShiz'){
+			} else if (typeof selector === 'object' && selector.name === 'daShiz'){
 				nodes = selector.el;
 			}
             
