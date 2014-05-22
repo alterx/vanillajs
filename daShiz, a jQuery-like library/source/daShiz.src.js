@@ -20,7 +20,7 @@
 				nodes = toArray(document.querySelectorAll(selector));
 			} else if (typeof selector === 'object' && selector.name !== 'daShiz'){
 				nodes = toArray(selector);
-			} else if (selector.name === 'daShiz'){
+			} else if (typeof selector === 'object' && selector.name === 'daShiz'){
 				nodes = selector.el;
 			}
             
@@ -34,10 +34,45 @@
         daShiz.fn = DaShiz.prototype = {  // Exposing the prototype so it can be extended 
             
             // Library public API
+			
+			hide: function () {
+                for (var i = 0; i < this.el.length; i++) {
+                    this.el[i].style.display = 'none';
+                }
+                return this;
+            },
+            
+            show: function () {
+                for (var i = 0; i < this.el.length; i++) {
+                    this.el[i].style.display = 'block';
+                }
+                return this;                
+            },
+            
+            remove: function () {
+                for (var i = 0; i < this.el.length; i++) {
+                    this.el[i].parentNode.removeChild(this.el[i]);
+                }
+                return this;
+            },
+            
+            get: function (index){
+                  return (typeof index !== 'undefined') ? this.el[index] : this.el;
+            }
 
         };
 		
 		// Private functions
+		
+		function toArray (pseudoArray) {
+            if(typeof pseudoArray === 'object' && pseudoArray.hasOwnProperty('length')){
+                return Array.prototype.slice.call(pseudoArray);
+            } else if(!pseudoArray.hasOwnProperty('length')) {
+				var ret = [];
+				ret.push(pseudoArray);
+				return ret;
+			}            
+        }
 
         return (window.daShiz = window.da$ = daShiz); // exposing the Library 
 
