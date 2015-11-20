@@ -26,17 +26,17 @@ References and further reading
 
 ## Great source of javascript patterns examples:
 
-http://shichuan.github.io/javascript-patterns/
-http://addyosmani.com/resources/essentialjsdesignpatterns/book/
+* http://shichuan.github.io/javascript-patterns/
+* http://addyosmani.com/resources/essentialjsdesignpatterns/book/
 
 ## Protected members: 
 
-http://philipwalton.com/articles/implementing-private-and-protected-members-in-javascript/
+* http://philipwalton.com/articles/implementing-private-and-protected-members-in-javascript/
 
 ## Scoping and hoisting:
 
-http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html
+* http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html
 
 ## Vanilla JS examples: 
 
-http://youmightnotneedjquery.com/ 
+* http://youmightnotneedjquery.com/ 
